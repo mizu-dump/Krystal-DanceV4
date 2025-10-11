@@ -2,9 +2,6 @@
 
 
 
-
-
-
 print([[
  _  __  ___  ____  _  _   ____ ____  _    ____  _  _ 
 | |/ / / _ \|  _ \| || | |  _ \___ \| |  |  _ \| || |
@@ -35,7 +32,6 @@ local KDV3 = game:GetService("CoreGui")
 if KDV3:FindFirstChild("KRYSTALDANCE") then
     KDV3.KRYSTALDANCE:Destroy()
 end
-
 --// Load DemoNotifications
 local NotificationLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/DemogorgonItsMe/DemoNotifications/refs/heads/main/V2/source.lua"))()
 NotificationLib:SetSettings({
@@ -87,175 +83,242 @@ coroutine.wrap(function()
     task.wait(2)
 end)()
 
--- KRYSTALDANCE V4 | KDV4
-local TweenService = game:GetService("TweenService")
-local CoreGui = game:GetService("CoreGui")
 
--- Remove old GUI if exists
-if CoreGui:FindFirstChild("KRYSTALDANCE") then
-    CoreGui.KRYSTALDANCE:Destroy()
-end
+local ScreenGui = Instance.new("ScreenGui",KDV3)
+ScreenGui.Name ="KRYSTALDANCE"
+local ui = Instance.new("Frame",ScreenGui)
+local title = Instance.new("TextLabel")
+local Frame = Instance.new("Frame")
+local REANIMATE = Instance.new("TextButton",ui)
+local Run1 = Instance.new("TextButton")
+local Stop1 = Instance.new("TextButton",ui)
+local ced = Instance.new("TextLabel")
+local Show =Instance.new("TextButton")
+local corner=Instance.new("UICorner",ui)
+local DANCEINFO=Instance.new("TextButton",ui)
+local corner1=Instance.new("UICorner",Run1)
+corner2=Instance.new("UICorner",Stop1)
+corner3=Instance.new("UICorner",Show)
+corner4=Instance.new("UICorner",REANIMATE)
+corner5=Instance.new("UICorner",DANCEINFO)
+corner4=Instance.new("UICorner",Enable)
+local CurrentFrame=Instance.new("Frame",ScreenGui)
+local Stroke=Instance.new("UIStroke",CurrentFrame)
+local Corner=Instance.new("UICorner",CurrentFrame)
+Stroke.Thickness=3
+Stroke.Transparency=.65
+local CurrentPage=Instance.new("TextLabel",CurrentFrame)
+local Page=Instance.new("TextLabel",CurrentFrame)
+local CurrentKey=Instance.new("TextLabel",CurrentFrame)
+local Key=Instance.new("TextLabel",CurrentFrame)
+local DanceInfo=Instance.new("TextLabel",CurrentFrame)
+local Dance=Instance.new("TextLabel",CurrentFrame)
+local Credits=Instance.new("TextLabel",CurrentFrame)
 
--- Main GUI
-local ScreenGui = Instance.new("ScreenGui", CoreGui)
-ScreenGui.Name = "KRYSTALDANCE"
-ScreenGui.ResetOnSpawn = false
 
--- Main Frame
-local ui = Instance.new("Frame", ScreenGui)
 ui.Name = "ui"
-ui.Size = UDim2.new(0,200,0,200)
-ui.Position = UDim2.new(0.35,0,0.5,-100)
-ui.BackgroundColor3 = Color3.new(0,0,0)
-ui.BorderSizePixel = 3
 ui.Active = true
-ui.Draggable = true
-Instance.new("UICorner", ui).CornerRadius = UDim.new(0,10)
+ui.BackgroundColor3 = Color3.new(0, 0, 0)
+ui.BackgroundTransparency = 0
+ui.BorderSizePixel = 3
+ui.Position=UDim2.new(0.35, 0, 0.5, -100)
+ui.Size = UDim2.new(0, 200, 0, 200)
 
--- Title
-local title = Instance.new("TextLabel", ui)
-title.Size = UDim2.new(1,0,0,50)
-title.Position = UDim2.new(0,0,0.02,0)
+title.Name = "title"
+title.Parent = ui
+title.BackgroundColor3 = Color3.new(68, 68, 68)
 title.BackgroundTransparency = 1
+title.BorderSizePixel = 2
+title.Position = UDim2.new(0, 0, 0.0199999996, 0)
+title.Size = UDim2.new(1, 0, 0, 50)
 title.Font = Enum.Font.Arcade
 title.Text = "CURRENT ANGLE"
+title.TextColor3 = Color3.new(1, 1, 1)
 title.TextScaled = true
-title.TextColor3 = Color3.new(1,1,1)
+title.TextSize = 7.5
+title.TextWrapped = true
 
-local titleBarLine = Instance.new("Frame", title)
-titleBarLine.Size = UDim2.new(0.85,0,0,6)
-titleBarLine.Position = UDim2.new(0.07,0,0.86,0)
-titleBarLine.BackgroundColor3 = Color3.new(0,0,0)
-titleBarLine.BorderSizePixel = 0
+Frame.Parent = title
+Frame.BackgroundColor3 = Color3.new(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.07, 0, 0.860000014, 0)
+Frame.Size = UDim2.new(0.85, 0, 0, 6)
 
--- Buttons
-local function createButton(parent, text, posX, posY)
-    local btn = Instance.new("TextButton", parent)
-    btn.Size = UDim2.new(0.5,0,0,45)
-    btn.Position = UDim2.new(posX,posY,posY,posY)
-    btn.BackgroundColor3 = Color3.new(0.25,0.25,0.25)
-    btn.Font = Enum.Font.Arcade
-    btn.Text = text
-    btn.TextColor3 = Color3.new(1,1,1)
-    btn.TextScaled = true
-    Instance.new("UICorner", btn)
-    return btn
-end
-
-local REANIMATE = createButton(ui,"REANIMATE",0,0.35)
+REANIMATE.Name = "F20 FR"
+REANIMATE.BackgroundColor3 = Color3.new(0.25, 0.25, 0.25)
+REANIMATE.BorderSizePixel = 0
+REANIMATE.Position = UDim2.new(0, 0, .350, 0)
+REANIMATE.Size = UDim2.new(0.5, 0, 0, 45)
+REANIMATE.Font = "Arcade"
+REANIMATE.Text = "REANIMATE"
+REANIMATE.TextColor3 = Color3.new(1,1,1)
 REANIMATE.TextScaled = true
+REANIMATE.TextSize = 10
+REANIMATE.TextWrapped = true
 
-local DANCEINFO = createButton(ui,"Click Me!",0.5,0.35)
+DANCEINFO.Name = "F20 FR"
+DANCEINFO.BackgroundColor3 = Color3.new(0.25, 0.25, 0.25)
+DANCEINFO.BorderSizePixel = 0
+DANCEINFO.Position = UDim2.new(0.5, 0, .350, 0)
+DANCEINFO.Size = UDim2.new(0.5, 0, 0, 45)
+DANCEINFO.Font = "Arcade"
+DANCEINFO.Text = "Click Me!"
+DANCEINFO.TextColor3 = Color3.new(1,1,1)
 DANCEINFO.TextScaled = false
 DANCEINFO.TextSize = 15
+DANCEINFO.TextWrapped = false
 
-local Run1 = createButton(ui,"Run",0,0.63)
-local Stop1 = createButton(ui,"Stop",0.5,0.63)
-Stop1.Visible = false
+Run1.Name = "Stick"
+Run1.Parent = ui
+Run1.BackgroundColor3 = Color3.new(0.25, 0.25, 0.25)
+Run1.BackgroundTransparency = 0
+Run1.BorderSizePixel = 0
+Run1.Position = UDim2.new(10, 0, 0.629999971, 0)
+Run1.Size = UDim2.new(0.5, 0, 0, 45)
+Run1.Font = "Arcade"
+Run1.Text = "Run"
+Run1.TextColor3 = Color3.new(1,1,1)
+Run1.TextScaled = true
+Run1.TextSize = 10
+Run1.TextWrapped = true
 
--- Credits
-local ced = Instance.new("TextLabel", ui)
-ced.Size = UDim2.new(1,0,0,50)
-ced.Position = UDim2.new(0,0,0.795,0)
+Stop1.BackgroundColor3 = Color3.new(0.25, 0.25, 0.25)
+Stop1.Position=UDim2.new(0.50, 0, 0.629999971, 0)
+Stop1.Size = UDim2.new(0.5, 0, 0, 45)
+Stop1.TextColor3 = Color3.new(1,1,1)
+Stop1.Text ="Stop"
+Stop1.TextScaled = true
+Stop1.TextSize = 10
+Stop1.Font="Arcade"
+
+ui.Draggable = true
+
+ced.Name = "made"
+ced.Parent = ui
+ced.BackgroundColor3 = Color3.new(1, 1, 1)
 ced.BackgroundTransparency = 1
-ced.Font = Enum.Font.Fantasy
+ced.BorderSizePixel = 2
+ced.Position = UDim2.new(0, 0, 0.795, 0)
+ced.Size = UDim2.new(1, 0, 0, 50)
+ced.Font = "Fantasy"
 ced.Text = "Krystal Dance V4"
+ced.TextColor3 = Color3.new(1, 1, 1)
 ced.TextScaled = true
-ced.TextColor3 = Color3.new(1,1,1)
+ced.TextSize = 6
+ced.TextWrapped = true
 
--- Show/Hide Button
-local Show = Instance.new("TextButton", ScreenGui)
-Show.Size = UDim2.new(0,50,0,50)
-Show.Position = UDim2.new(0,0,2,0)
-Show.Text = "Disable"
-Show.TextColor3 = Color3.new(1,1,1)
-Show.Font = Enum.Font.Arcade
-Show.TextScaled = true
-Show.BackgroundColor3 = Color3.new(0.25,0.25,0.25)
-Instance.new("UICorner", Show)
+Show.Parent=ScreenGui
+Show.Font="Arcade"
+Show.Text="Disable"
+Show.TextColor3=Color3.new(1,1,1)
+Show.TextScaled=true
+Show.TextSize=14
+Show.Size=UDim2.new(0, 50, 0, 50)
+Show.Position=UDim2.new(0, 0, 2, 0)
+Show.BackgroundColor3 = Color3.new(0.25, 0.25, 0.25)
+ui.Visible=true 
 
+CurrentFrame.Size=UDim2.new(0.26572, 0, 0.16564, 0);
+CurrentFrame.Name=[[Current]]
+CurrentFrame.Position=UDim2.new(0.385, 0, 1, 0);
+CurrentFrame.BackgroundColor3=Color3.fromRGB(50,50,50)
+CurrentFrame.BackgroundTransparency=.55
+
+CurrentPage.Text=[[Page :]]
+CurrentPage.Font=[[Arcade]]
+CurrentPage.TextColor3=Color3.new(255,255,255)
+CurrentPage.BackgroundTransparency=1
+CurrentPage.Size=UDim2.new(0.2, 0, 0.59259, 0)
+CurrentPage.Position=UDim2.new(0.01429, 0, 0, 0)
+CurrentPage.TextSize=11
+CurrentPage.Name=[[CurrentPage]]
+
+Page.Text=[[1]]
+Page.Font=[[Arcade]]
+Page.BackgroundTransparency=1 
+Page.TextSize=18 
+Page.TextColor3=Color3.new(255,255,255)
+Page.Size=UDim2.new(0.2, 0, 0.33333, 0)
+Page.Position=UDim2.new(0.22857, 0, 0.11111, 0)
+Page.Name=[[CurrentPage]]
+
+CurrentKey.Text=[[CKey :]]
+CurrentKey.Font=[[Arcade]]
+CurrentKey.Size=UDim2.new(0.2, 0, 0.33333, 0)
+CurrentKey.TextColor3=Color3.new(255,255,255)
+CurrentKey.BackgroundTransparency=1 
+CurrentKey.Position=UDim2.new(0.53571, 0, 0.12963, 0)
+CurrentKey.TextSize=11 
+CurrentKey.Name=[[CurrentKey]]
+
+Key.Text=[[WASD]]
+Key.Font=[[Arcade]]
+Key.BackgroundTransparency=1 
+Key.TextColor3=Color3.new(255,255,255)
+Key.TextSize=18 
+Key.Size=UDim2.new(0.2, 0, 0.33333, 0)
+Key.Position=UDim2.new(0.75, 0, 0.11111, 0)
+Key.Name=[[Mode]]
+
+DanceInfo.Text=[[CDance :]]
+DanceInfo.Font=[[Arcade]]
+DanceInfo.BackgroundTransparency=1
+DanceInfo.TextColor3=Color3.new(255,255,255)
+DanceInfo.TextSize=11 
+DanceInfo.Size=UDim2.new(0.2, 0, 0.3, 0)
+DanceInfo.Position=UDim2.new(0, 0, 0.55556, 0)
+DanceInfo.Name=[[PressedKey]]
+
+Dance.Text=[[None]]
+Dance.Font=[[Arcade]]
+Dance.BackgroundTransparency=1 
+Dance.TextSize=10.5
+Dance.TextColor3=Color3.new(255,255,255)
+Dance.Size=UDim2.new(0.2, 0, 0.33333, 0)
+Dance.Position=UDim2.new(0.310, 0, 0.55556, 0)
+
+Credits.Text=[[Modded By Mizumaru]]
+Credits.Font=[[Fantasy]]
+Credits.TextColor3=Color3.new(255,255,255)
+Credits.BackgroundTransparency=1 
+Credits.TextSize=11
+Credits.Size=UDim2.new(0.4, 0, 0.37037, 0)
+Credits.Position=UDim2.new(0, 125, 0.55556, 0);
+Credits.Name=[[Credits]]
 local originalUIPosition = ui.Position
 local isTweening = false
-local isenabled = false
-
 Show.MouseButton1Click:Connect(function()
     if isTweening then return end
+    
     isTweening = true
     isenabled = not isenabled
+    
     if isenabled then
-        local tween = TweenService:Create(ui,TweenInfo.new(0.5,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
-            {Position=UDim2.new(1.5,0,originalUIPosition.Y.Scale,originalUIPosition.Y.Offset)})
+        local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+        local tween = game:GetService("TweenService"):Create(ui, tweenInfo, {Position = UDim2.new(1.5, 0, originalUIPosition.Y.Scale, originalUIPosition.Y.Offset)})
         tween:Play()
-        Show.Text = "Enable"
+        Show.Text = "OPEN"
+        
         tween.Completed:Connect(function()
             ui.Visible = false
             isTweening = false
         end)
     else
-        ui.Visible = true
-        local tween = TweenService:Create(ui,TweenInfo.new(0.5,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
-            {Position=originalUIPosition})
+                ui.Visible = true
+        local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+        local tween = game:GetService("TweenService"):Create(ui, tweenInfo, {Position = originalUIPosition})
         tween:Play()
-        Show.Text = "Disable"
-        tween.Completed:Connect(function() isTweening = false end)
+        Show.Text = "CLOSE"
+        
+        tween.Completed:Connect(function()
+            isTweening = false
+        end)
     end
 end)
 
--- Current Info Panel
-local CurrentFrame = Instance.new("Frame",ScreenGui)
-CurrentFrame.Size = UDim2.new(0.26572,0,0.16564,0)
-CurrentFrame.Position = UDim2.new(0.385,0,1,0)
-CurrentFrame.BackgroundColor3 = Color3.fromRGB(50,50,50)
-CurrentFrame.BackgroundTransparency = 0.55
-Instance.new("UICorner", CurrentFrame)
-local Stroke = Instance.new("UIStroke", CurrentFrame)
-Stroke.Thickness = 3
-Stroke.Transparency = 0.65
-
--- Labels inside CurrentFrame
-local function createLabel(parent,text,pos,size)
-    local lbl = Instance.new("TextLabel", parent)
-    lbl.Text = text
-    lbl.Size = size
-    lbl.Position = pos
-    lbl.BackgroundTransparency = 1
-    lbl.Font = Enum.Font.Arcade
-    lbl.TextColor3 = Color3.new(1,1,1)
-    lbl.TextScaled = true
-    return lbl
-end
-
-local CurrentPage = createLabel(CurrentFrame,"Page :",UDim2.new(0.014,0,0,0),UDim2.new(0.2,0,0.6,0))
-local Page = createLabel(CurrentFrame,"1",UDim2.new(0.228,0,0.11,0),UDim2.new(0.2,0,0.33,0))
-local CurrentKey = createLabel(CurrentFrame,"Key :",UDim2.new(0.535,0,0.129,0),UDim2.new(0.2,0,0.33,0))
-local Key = createLabel(CurrentFrame,"WASD",UDim2.new(0.75,0,0.111,0),UDim2.new(0.2,0,0.33,0))
-local DanceInfoLbl = createLabel(CurrentFrame,"Emote :",UDim2.new(0,0,0.555,0),UDim2.new(0.2,0,0.3,0))
-local Dance = createLabel(CurrentFrame,"None",UDim2.new(0.31,0,0.555,0),UDim2.new(0.2,0,0.33,0))
-local Credits = createLabel(CurrentFrame,"Modded By Mizumaru",UDim2.new(0.625,0,0.555,0),UDim2.new(0.4,0,0.37,0))
-
--- Buttons Functionality
-REANIMATE.MouseButton1Click:Connect(function()
-    Dance.Text = "None"
-    print("Reanimate Pressed")
-end)
-
-DANCEINFO.MouseButton1Click:Connect(function()
-    Dance.Text = "None"
-    print("Click Me Pressed")
-end)
-
-Run1.MouseButton1Click:Connect(function()
-    Run1.Visible = false
-    Stop1.Visible = true
-    CurrentPage.Text = "Page :"
-end)
-
-Stop1.MouseButton1Click:Connect(function()
-    Run1.Visible = true
-    Stop1.Visible = false
-    CurrentPage.Text = "Stopped"
-end)
-
+local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+local tween = game:GetService("TweenService"):Create(Show, tweenInfo, {Position = UDim2.new(0, 0, .50, 0)})
+tween:Play()
 local CHECKF9=false
 DANCEINFO.MouseButton1Click:Connect(function()
     notify("Check Console!")
@@ -277,15 +340,15 @@ DANCEINFO.MouseButton1Click:Connect(function()
  
     printHeader("🎵 Krystal Dance V4 - Key Bindings 🎵")
  
-    printKey("Q", "RAT DANCE | PAGE 2 - XO | PAGE 3 - C14 | PAGE 4 - UNLOCKIT | PAGE 5 - RESULTS")
-    printKey("E", "BOOGIE | PAGE 2 - SODA POP | PAGE 3 - Slickback | PAGE 4 - SMOOTHMOVES | PAGE 5 - STATIC 2")
+    printKey("Q", "RAT DANCE | PAGE 2 - XO | PAGE 3 - C14 | PAGE 4 - UNLOCKIT | PAGE 5 - RESULTS | PAGE 6 - MY SHUCKS")
+    printKey("E", "BOOGIE | PAGE 2 - SODA POP | PAGE 3 - Slickback | PAGE 4 - SMOOTHMOVES | PAGE 5 - STATIC 2 | PAGE 6 - CHANGE TRACK")
     printKey("R", "ASSUMPTIONS | PAGE 2 - LOVE FOR YOU | PAGE 3 - DOODLE | PAGE 4 - LAGTRAIN | PAGE 5 - SILLY BILLY 2")
     printKey("T", "EGYPT | PAGE 2 - ASSUMPTIONS SHUFFLE | PAGE 3 - GOAT | PAGE 4 - SUKI | PAGE 5 - SQUIDWARD YELL 2")
     printKey("Y", "DO THE FLOP | PAGE 2 - PEASHOOTER | PAGE 3 - BUMBLEBEE | PAGE 4 - CAFETERIA | PAGE 5 - YELL 3")
     printKey("U", "CARAMELLDANSEN | PAGE 2 - BLOODPOP | PAGE 3 - STOCK SHUFFLE | PAGE 4 - DARE | PAGE 5 - YELL 1")
     printKey("P", "BOMB MONKEY | PAGE 2 - INTERNET YAMERO | PAGE 3 - RAT DANCE 2 | PAGE 4 - TENNA | PAGE 5 - OUT OF TOUCH")
     printKey("F", "HEEL TOE HOP | PAGE 2 - CHRONOSHIFT | PAGE 3 - SHUBA DUCK | PAGE 4 - INSANITY | PAGE 5 - LONELY")
-    printKey("G", "GANGNAM | PAGE 2 - IT BURNS | PAGE 3 - LEMON MELON COOKIE | PAGE 4 - TENNA 2")
+    printKey("G", "GANGNAM | PAGE 2 - IT BURNS | PAGE 3 - LEMON MELON COOKIE | PAGE 4 - TENNA 2 | PAGE 6 - BALLISTIC")
     printKey("H", "DOMINO | PAGE 2 - DISTRACTION DANCE | PAGE 3 - BIRDBRAIN | PAGE 4 - RAMBUNCTIOUS")
     printKey("J", "STARLIT | PAGE 2 - KEEP UP | PAGE 3 - FEIN | PAGE 4 - SIDE SHUFFLE")
     printKey("K", "WALK | PAGE 2 - BOOMBOX | PAGE 3 - POPIPO | PAGE 4 - ELECTRO SWING")
@@ -294,7 +357,7 @@ DANCEINFO.MouseButton1Click:Connect(function()
     printKey("X", "KAZOTSKY KICK | PAGE 2 - HEAVY LOVE | PAGE 3 - ROTTEN | PAGE 4 - CRANK THAT")
     printKey("C", "MESMERIZER | PAGE 2 - MILLION | PAGE 3 - SPOOKY MONTH | PAGE 4 - TAKEDOWN")
     printKey("V", "LIAR DANCER | PAGE 2 - BILLIE JEAN | PAGE 3 - LIMITED FLEXWORKS | PAGE 4 - GOING DOWN")
-    printKey("B", "HAKARI | PAGE 2 - SAVOR THE W | PAGE 3 - UNLIMITED FLEXWORKS | PAGE 4 - SPAMTON")
+    printKey("B", "HAKARI | PAGE 2 - SAVOR THE W | PAGE 3 - UNLIMITED FLEXWORKS | PAGE 4 - SPAMTON | PAGE 5 - METRO ARMS SWING")
     printKey("N", "BOX SWING | PAGE 2 - LAY | PAGE 3 - CRISSCROSS | PAGE 4 - KEMUSAN")
     printKey("M", "CHANGE PAGES")
     printKey("-", "COMMERCIAL BREAK | PAGE 2 - CLUB PENGUIN | PAGE 3 - TORT | PAGE 4 - IGAKU")
@@ -305,7 +368,7 @@ DANCEINFO.MouseButton1Click:Connect(function()
     printKey("=", "TOGGLE BACKGROUND MUSIC WHEN NOT DANCING")
  
     print("\n╔══════════════════════════════════════╗")
-    print("║                  ✨  UPDATE: 1 New Dance/s       ║")
+    print("║                  ✨  UPDATE: New Dance/s  + New Page 1/9     ║")
     print("╚══════════════════════════════════════╝\n")
  
     wait(1)
@@ -1782,7 +1845,7 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 				sound69.SoundId = DanceAsset("heavylove.mp3")
 				timeposcur = sound69.TimePosition 
 				sound69:Play()
-				Info("Heavy Love","X")
+				Info("Heavylove","X")
 				playanim(101332118847458) -- uuid. 85856686932206
 			else
 				stopanim()
@@ -2871,39 +2934,39 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 if k == "m" then
     if mode == 1 then
         mode = 2
-        notify("Page 2", 5)
+        notify("Page 2")
         Page.Text = "2"
     elseif mode == 2 then
         mode = 3
-        notify("Page 3", 5)
+        notify("Page 3")
         Page.Text = "3"
     elseif mode == 3 then
         mode = 4
-        notify("Page 4", 5)
+        notify("Page 4")
         Page.Text = "4"
     elseif mode == 4 then
         mode = 5
-        notify("Page 5", 5)
+        notify("Page 5")
         Page.Text = "5"
     elseif mode == 5 then
         mode = 6
-        notify("Page 6", 5)
+        notify("Page 6")
         Page.Text = "6"
     elseif mode == 6 then
         mode = 7
-        notify("Page 7", 5)
+        notify("Page 7")
         Page.Text = "7"
     elseif mode == 7 then
         mode = 8
-        notify("Page 8", 5)
+        notify("Page 8")
         Page.Text = "8"
     elseif mode == 8 then
         mode = 9
-        notify("Page 9", 5)
+        notify("Page 9")
         Page.Text = "9"
     elseif mode == 9 then
         mode = 1
-        notify("Page 1", 5)
+        notify("Page 1")
         Page.Text = "1"
         end
     end
