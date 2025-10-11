@@ -1,3 +1,10 @@
+-- [[ discord.gg/25ms | Please Do Not Skid I Already Know Which One Is Skidded or Not... ]]
+
+
+
+
+
+
 print([[
  _  __  ___  ____  _  _   ____ ____  _    ____  _  _ 
 | |/ / / _ \|  _ \| || | |  _ \___ \| |  |  _ \| || |
