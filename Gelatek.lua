@@ -1,9 +1,4 @@
--- [[ discord.gg/25ms | Please Do Not Skid This Script I Already Know Which One Is Mine Or Not...]]
-
-
-
-
-
+-- [[ discord.gg/25ms | Please Do Not Skid This Script I Already Know Which One Is Mine Or Not... ]]
 
 
 
@@ -14,11 +9,11 @@ print([[
 |   \ | |_| | |_| |__   _| |_| / __/| |__| |_| |__   _|
 |_|\_\ \___/|____/   |_| |____/_____|____|____/   |_|  
 
-   Krystal Dance V4 | Modded By Mizumaru
+   KDV4 | Modded By Mizumaru
 ]])
 
 coroutine.resume(coroutine.create(function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Tag"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/mizu-dump/Krystal-DanceV4/refs/heads/main/Tag.lua"))()
 end))
 if isfolder and not isfolder("KDV3") then 
 	makefolder("KDV3")
@@ -65,7 +60,7 @@ NotificationLib:SetTheme({
  
 local function notify(text, type, duration)
     NotificationLib:Notify({
-        Title = "Kdv4 | Modded By Mizumaru",
+        Title = "KDV4 | Modded By Mizumaru",
         Message = text,
         Type = type or "info",
         Duration = duration or 4
@@ -78,7 +73,7 @@ coroutine.wrap(function()
     task.wait(1)
     notify("KDV3 Fixed By @MrY7zz")
     task.wait(1)
-    notify("KDV3 Modded By @Theo ( please notice me... ;3 )")
+    notify("KDV3 Modded By @Theo ( please notice me... :3 )")
     task.wait(1)
     notify("KDV4 Remake By @mizuscripts")
     task.wait(1)
@@ -106,6 +101,7 @@ corner2=Instance.new("UICorner",Stop1)
 corner3=Instance.new("UICorner",Show)
 corner4=Instance.new("UICorner",REANIMATE)
 corner5=Instance.new("UICorner",DANCEINFO)
+corner4=Instance.new("UICorner",Enable)
 local CurrentFrame=Instance.new("Frame",ScreenGui)
 local Stroke=Instance.new("UIStroke",CurrentFrame)
 local Corner=Instance.new("UICorner",CurrentFrame)
@@ -118,6 +114,7 @@ local Key=Instance.new("TextLabel",CurrentFrame)
 local DanceInfo=Instance.new("TextLabel",CurrentFrame)
 local Dance=Instance.new("TextLabel",CurrentFrame)
 local Credits=Instance.new("TextLabel",CurrentFrame)
+
 
 ui.Name = "ui"
 ui.Active = true
@@ -227,7 +224,7 @@ CurrentFrame.Position=UDim2.new(0.385, 0, 1, 0);
 CurrentFrame.BackgroundColor3=Color3.fromRGB(50,50,50)
 CurrentFrame.BackgroundTransparency=.55
 
-CurrentPage.Text=[[Page:]]
+CurrentPage.Text=[[Page :]]
 CurrentPage.Font=[[Arcade]]
 CurrentPage.TextColor3=Color3.new(255,255,255)
 CurrentPage.BackgroundTransparency=1
@@ -245,7 +242,7 @@ Page.Size=UDim2.new(0.2, 0, 0.33333, 0)
 Page.Position=UDim2.new(0.22857, 0, 0.11111, 0)
 Page.Name=[[CurrentPage]]
 
-CurrentKey.Text=[[Key :]]
+CurrentKey.Text=[[CKey :]]
 CurrentKey.Font=[[Arcade]]
 CurrentKey.Size=UDim2.new(0.2, 0, 0.33333, 0)
 CurrentKey.TextColor3=Color3.new(255,255,255)
@@ -263,7 +260,7 @@ Key.Size=UDim2.new(0.2, 0, 0.33333, 0)
 Key.Position=UDim2.new(0.75, 0, 0.11111, 0)
 Key.Name=[[Mode]]
 
-DanceInfo.Text=[[Emote :]]
+DanceInfo.Text=[[CDance :]]
 DanceInfo.Font=[[Arcade]]
 DanceInfo.BackgroundTransparency=1
 DanceInfo.TextColor3=Color3.new(255,255,255)
@@ -288,7 +285,6 @@ Credits.TextSize=11
 Credits.Size=UDim2.new(0.4, 0, 0.37037, 0)
 Credits.Position=UDim2.new(0, 125, 0.55556, 0);
 Credits.Name=[[Credits]]
-
 local originalUIPosition = ui.Position
 local isTweening = false
 Show.MouseButton1Click:Connect(function()
@@ -301,7 +297,7 @@ Show.MouseButton1Click:Connect(function()
         local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
         local tween = game:GetService("TweenService"):Create(ui, tweenInfo, {Position = UDim2.new(1.5, 0, originalUIPosition.Y.Scale, originalUIPosition.Y.Offset)})
         tween:Play()
-        Show.Text = "Enable"
+        Show.Text = "OPEN"
         
         tween.Completed:Connect(function()
             ui.Visible = false
@@ -312,7 +308,7 @@ Show.MouseButton1Click:Connect(function()
         local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
         local tween = game:GetService("TweenService"):Create(ui, tweenInfo, {Position = originalUIPosition})
         tween:Play()
-        Show.Text = "Disable"
+        Show.Text = "CLOSE"
         
         tween.Completed:Connect(function()
             isTweening = false
@@ -323,32 +319,6 @@ end)
 local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
 local tween = game:GetService("TweenService"):Create(Show, tweenInfo, {Position = UDim2.new(0, 0, .50, 0)})
 tween:Play()
-
--- Buttons Functionality
-REANIMATE.MouseButton1Click:Connect(function()
-    Dance.Text = "Reanimating..."
-    print("Reanimate Pressed")
-end)
-
-DANCEINFO.MouseButton1Click:Connect(function()
-    Dance.Text = "Dancing!"
-    print("Click Me Pressed")
-end)
-
-Run1.MouseButton1Click:Connect(function()
-    Run1.Visible = false
-    Stop1.Visible = true
-    CurrentPage.Text = "Running"
-end)
-
-Stop1.MouseButton1Click:Connect(function()
-    Run1.Visible = true
-    Stop1.Visible = false
-    CurrentPage.Text = "Stopped"
-end)
-
-
-
 local CHECKF9=false
 DANCEINFO.MouseButton1Click:Connect(function()
     notify("Check Console!")
@@ -370,7 +340,7 @@ DANCEINFO.MouseButton1Click:Connect(function()
  
     printHeader("🎵 Krystal Dance V4 - Key Bindings 🎵")
  
-    printKey("Q", "RAT DANCE | PAGE 2 - XO | PAGE 3 - C14 | PAGE 4 - UNLOCKIT | PAGE 5 - RESULTS | PAGE 6 - STATIC 2")
+    printKey("Q", "RAT DANCE | PAGE 2 - XO | PAGE 3 - C14 | PAGE 4 - UNLOCKIT | PAGE 5 - RESULTS | PAGE 6 - MY SHUCKS")
     printKey("E", "BOOGIE | PAGE 2 - SODA POP | PAGE 3 - Slickback | PAGE 4 - SMOOTHMOVES | PAGE 5 - STATIC 2 | PAGE 6 - CHANGE TRACK")
     printKey("R", "ASSUMPTIONS | PAGE 2 - LOVE FOR YOU | PAGE 3 - DOODLE | PAGE 4 - LAGTRAIN | PAGE 5 - SILLY BILLY 2")
     printKey("T", "EGYPT | PAGE 2 - ASSUMPTIONS SHUFFLE | PAGE 3 - GOAT | PAGE 4 - SUKI | PAGE 5 - SQUIDWARD YELL 2")
@@ -378,7 +348,7 @@ DANCEINFO.MouseButton1Click:Connect(function()
     printKey("U", "CARAMELLDANSEN | PAGE 2 - BLOODPOP | PAGE 3 - STOCK SHUFFLE | PAGE 4 - DARE | PAGE 5 - YELL 1")
     printKey("P", "BOMB MONKEY | PAGE 2 - INTERNET YAMERO | PAGE 3 - RAT DANCE 2 | PAGE 4 - TENNA | PAGE 5 - OUT OF TOUCH")
     printKey("F", "HEEL TOE HOP | PAGE 2 - CHRONOSHIFT | PAGE 3 - SHUBA DUCK | PAGE 4 - INSANITY | PAGE 5 - LONELY")
-    printKey("G", "GANGNAM | PAGE 2 - IT BURNS | PAGE 3 - LEMON MELON COOKIE | PAGE 4 - TENNA 2")
+    printKey("G", "GANGNAM | PAGE 2 - IT BURNS | PAGE 3 - LEMON MELON COOKIE | PAGE 4 - TENNA 2 | PAGE 6 - BALLISTIC")
     printKey("H", "DOMINO | PAGE 2 - DISTRACTION DANCE | PAGE 3 - BIRDBRAIN | PAGE 4 - RAMBUNCTIOUS")
     printKey("J", "STARLIT | PAGE 2 - KEEP UP | PAGE 3 - FEIN | PAGE 4 - SIDE SHUFFLE")
     printKey("K", "WALK | PAGE 2 - BOOMBOX | PAGE 3 - POPIPO | PAGE 4 - ELECTRO SWING")
@@ -387,7 +357,7 @@ DANCEINFO.MouseButton1Click:Connect(function()
     printKey("X", "KAZOTSKY KICK | PAGE 2 - HEAVY LOVE | PAGE 3 - ROTTEN | PAGE 4 - CRANK THAT")
     printKey("C", "MESMERIZER | PAGE 2 - MILLION | PAGE 3 - SPOOKY MONTH | PAGE 4 - TAKEDOWN")
     printKey("V", "LIAR DANCER | PAGE 2 - BILLIE JEAN | PAGE 3 - LIMITED FLEXWORKS | PAGE 4 - GOING DOWN")
-    printKey("B", "HAKARI | PAGE 2 - SAVOR THE W | PAGE 3 - UNLIMITED FLEXWORKS | PAGE 4 - SPAMTON")
+    printKey("B", "HAKARI | PAGE 2 - SAVOR THE W | PAGE 3 - UNLIMITED FLEXWORKS | PAGE 4 - SPAMTON | PAGE 5 - METRO ARMS SWING")
     printKey("N", "BOX SWING | PAGE 2 - LAY | PAGE 3 - CRISSCROSS | PAGE 4 - KEMUSAN")
     printKey("M", "CHANGE PAGES")
     printKey("-", "COMMERCIAL BREAK | PAGE 2 - CLUB PENGUIN | PAGE 3 - TORT | PAGE 4 - IGAKU")
@@ -398,7 +368,7 @@ DANCEINFO.MouseButton1Click:Connect(function()
     printKey("=", "TOGGLE BACKGROUND MUSIC WHEN NOT DANCING")
  
     print("\n╔══════════════════════════════════════╗")
-    print("║                  ✨  UPDATE: 1 New Dance/s       ║")
+    print("║                  ✨  UPDATE: New Dance/s  + New Page 1/9     ║")
     print("╚══════════════════════════════════════╝\n")
  
     wait(1)
@@ -418,22 +388,50 @@ local delfile = delfile or function(path)
     end
 end
 local REANIMATION=false
+local char=game:GetService("Players").LocalPlayer.Character
+local Character =char
 REANIMATE.MouseButton1Click:Connect(function()
-if REANIMATION then return notify([[ALREADY REANIMATING]]) end
-if game:GetService("Players").LocalPlayer.Character.Name == "GelatekReanimate" then
+if REANIMATION then return end
+if game:GetService("Players").LocalPlayer.Character.Name == Character.Name.."_Fake" then
 return notify("ALREADY REANIMATED CUH") end
 REANIMATION=true
-Run1.Position = UDim2.new(100, 0, 0.629999971, 0)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Reanimate.lua"))()
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("-net")
-wait(2)
+--// BY MrY7zz
+if not game.IsLoaded then
+	game.Loaded:Wait()
+end
+
+--// Check configdoc.md for settings documentation (CHECK THE DESCRIPTION OF THIS POST)
+
+--// Below are the settings
+-- SETTINGS --
+local settings = _G
+
+settings["Use default animations"] = true
+settings["Fake character transparency level"] = 1
+settings["Disable character scripts"] = true
+settings["Fake character should collide"] = true
+settings["Parent real character to fake character"] = false
+settings["Respawn character"] = true
+settings["Instant respawn"] = false
+settings["Hide HumanoidRootPart"] = false
+settings["PermaDeath fake character"] = true
+settings["R15 Reanimate"] = false
+settings["Click Fling"] = false
+settings["Hide RootPart Distance"] = CFrame.new(255, 255, 0)
+
+settings["Names to exclude from transparency"] = {
+    --[[ example:
+    ["HumanoidRootPart"] = true,
+    ["Left Arm"] = true
+    ]]
+}
+--// Settings end
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/CurrentAngleV4/refs/heads/main/v4.lua"))()
 REANIMATION=false
+wait(1)
 Run1.Position = UDim2.new(0, 0, 0.629999971, 0)
 end)
-
-
-
-
 
 
 
@@ -458,7 +456,7 @@ getmetatable(is).__namecall = function(_, id)
 	return loadlocalasset(id)
 end
 
---THIS SHIT IS CASE SENSITIVE CUH, ONE SINGLE MISTAKE WILL MESS THINGS UP, LIKE IT DOEST LOAD THE DANCE 
+--THIS SHIT IS CASE SENSITIVE CUH, ONE SINGLE MISTAKE WILL MESS THINGS UP
 -- VVVVVVVV
 local function AddDance(Name, ScriptUrl)
     local filePath = "KRYSTALDANCE/"..Name
@@ -503,6 +501,7 @@ local function AddDance(Name, ScriptUrl)
         return nil
     end
 end
+
 
 local danceCache = {}
 local function LoadDance(danceName, scriptUrl)
@@ -550,6 +549,9 @@ local exploit = "shitsploit"
         end)
         return s.SoundId
 	end
+
+
+
 
 local validAudioFiles = {
     "Sphere.mp3",
@@ -706,8 +708,6 @@ end
 local function Forcestop()
      sound69:Stop()
 end
-local char=game:GetService("Players").LocalPlayer.Character
-local Character =char
 local Humanoid = Character:WaitForChild("Humanoid")
 local mode = 1 
 local INPUTLOOP =nil
@@ -722,7 +722,7 @@ local RUNNING = false
 Run1.MouseButton1Click:Connect(function()
 if REANIMATION then return notify("Reanimating please wait") end
 if RUNNING then return notify("SCRIPT IS RUNNING!!") end
-if game:GetService("Players").LocalPlayer.Character.Name ~= "GelatekReanimate" then
+if game:GetService("Players").LocalPlayer.Character.Name ~= Character.Name.."_Fake" then
 return notify("REANIMATE FIRST CUH") end
 Run1.Position = UDim2.new(10, 0, 0.629999971, 0)
 local tweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
@@ -2913,43 +2913,6 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			else
 				stopanim()
 			end
-        elseif mode == 6 then
-    if k == "q" then
-        if not dancing then
-            stopanim()
-            dancing = true
-            Playsound.Volume = 0
-            task.wait(0.005)
-            -- New Dance Sound
-            sound69.SoundId = DanceAsset("Static.mp3") -- <-- Change Track MP3
-            timeposcur = sound69.TimePosition
-            -- New Dance Animation
-            local dance = LoadDance("Static2New", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Static2.lua")
-            sound69:Play()
-            Info("Static 2", "Q")
-            if dance then
-                playanim(dance)
-            end
-        else
-            stopanim()
-        end
-    elseif k == "e" then
-        if not dancing then
-            stopanim()
-            dancing = true
-            Playsound.Volume = 0
-            task.wait(0.005)
-            sound69.SoundId = DanceAsset("Censored.mp3")
-            timeposcur = sound69.TimePosition
-            local dance = LoadDance("Track", "https://raw.githubusercontent.com/Solary-3/Scripts/refs/heads/main/Static2.lua")
-            sound69:Play()
-            Info("", "E")
-            if dance then
-                playanim(dance)
-            end
-        else
-            stopanim()
-        end
 	     end
 	end
 	if k == "equals" then 
@@ -2958,18 +2921,10 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 			if playbacktrack == true then 
 			--	sound69:Play()
 			  	sound69.Volume = .75
-			  	game:GetService("StarterGui"):SetCore("SendNotification", {
-			  		Title = "Krystal Dance V3";
-			  		Duration = 5;
-			  		Text = "Background music enabled"
-			  	})
+			  	notify("Krystal Dance V4")
 			else 
 				sound69.Volume=0
-				game:GetService("StarterGui"):SetCore("SendNotification", {
-					Title = "Krystal Dance V3";
-					Duration = 5;
-					Text = "Background music disabled"
-				})
+				notify("Krystal Dance V4")
 			end
 		end
 	end
@@ -2979,47 +2934,43 @@ INPUTLOOP = uis.InputBegan:Connect(function(k,chatting)
 if k == "m" then
     if mode == 1 then
         mode = 2
-        notify("Page 2", 5)
+        notify("Page 2")
         Page.Text = "2"
     elseif mode == 2 then
         mode = 3
-        notify("Page 3", 5)
+        notify("Page 3")
         Page.Text = "3"
     elseif mode == 3 then
         mode = 4
-        notify("Page 4", 5)
+        notify("Page 4")
         Page.Text = "4"
     elseif mode == 4 then
         mode = 5
-        notify("Page 5", 5)
+        notify("Page 5")
         Page.Text = "5"
     elseif mode == 5 then
         mode = 6
-        notify("Page 6", 5)
+        notify("Page 6")
         Page.Text = "6"
     elseif mode == 6 then
         mode = 7
-        notify("Page 7", 5)
+        notify("Page 7")
         Page.Text = "7"
     elseif mode == 7 then
         mode = 8
-        notify("Page 8", 5)
+        notify("Page 8")
         Page.Text = "8"
     elseif mode == 8 then
         mode = 9
-        notify("Page 9", 5)
+        notify("Page 9")
         Page.Text = "9"
     elseif mode == 9 then
         mode = 1
-        notify("Page 1", 5)
+        notify("Page 1")
         Page.Text = "1"
         end
     end
 end)
-
-
-
-
 
 
 
@@ -3076,7 +3027,6 @@ SITTING=char.Humanoid:GetPropertyChangedSignal("Sit"):Connect(function()
 		char.Humanoid:Move(Vector3.new(0,0,-1),true)
 	end
 end)
-
 local RunService = game:GetService("RunService")
 local Player = game:GetService("Players").LocalPlayer
 local PlayerMouse = Player:GetMouse()
@@ -3187,7 +3137,6 @@ end)
 
 
 end)
-
 
 Stop1.MouseButton1Click:Connect(function()
 if RUNNING then
