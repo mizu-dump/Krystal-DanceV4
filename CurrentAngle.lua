@@ -83,7 +83,7 @@ coroutine.wrap(function()
     task.wait(1)
     notify('Credit Goes To Them! :D')
     task.wait(1)
-    notify('Kdc4 Modded By Mizumaru | LOADED!', "info", 10)
+    notify('KDV4 Modded By Mizumaru | LOADED!', "info", 10)
     task.wait(2)
 end)()
 
