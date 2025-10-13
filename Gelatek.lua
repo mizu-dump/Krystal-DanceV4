@@ -12,6 +12,9 @@ print([[
    KDV4 | Modded By Mizumaru
 ]])
 
+-- ATA Keyboard Script @ata
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Xxtan31/Ata/main/deltakeyboardcrack.txt"))()
+
 coroutine.resume(coroutine.create(function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/mizu-dump/Krystal-DanceV4/refs/heads/main/Tag.lua"))()
 end))
