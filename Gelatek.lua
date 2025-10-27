@@ -32,7 +32,7 @@ end
 
 -- 🔹 Blacklist System
 task.wait(0.5)
-https://raw.githubusercontent.com/mizu-dump/Krystal-DanceV4/refs/heads/main/Blacklist.lua
+loadstring(game:HttpGet("https://raw.githubusercontent.com/mizu-dump/Krystal-DanceV4/refs/heads/main/Blacklist.lua"))()
 
 --// Load DemoNotifications
 local NotificationLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/DemogorgonItsMe/DemoNotifications/refs/heads/main/V2/source.lua"))()
