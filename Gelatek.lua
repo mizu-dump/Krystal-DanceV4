@@ -30,10 +30,6 @@ if KDV3:FindFirstChild("KRYSTALDANCE") then
     KDV3.KRYSTALDANCE:Destroy()
 end
 
--- 🔹 Blacklist System
-task.wait(0.5)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/mizu-dump/Krystal-DanceV4/refs/heads/main/Blacklist.lua"))()
-
 --// Load DemoNotifications
 local NotificationLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/DemogorgonItsMe/DemoNotifications/refs/heads/main/V2/source.lua"))()
 NotificationLib:SetSettings({
@@ -44,6 +40,7 @@ NotificationLib:SetSettings({
     fadeTime = 0.3,
     slideDistance = 20
 })
+
 NotificationLib:SetTheme({
     primaryColor = Color3.fromRGB(45, 45, 45),
     successColor = Color3.fromRGB(50, 180, 100),
@@ -4083,3 +4080,8 @@ Stop1.MouseButton1Click:Connect(function()
         respawn()
     end
 end)
+
+-- 🔹 Blacklist System
+task.wait(0.5)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/mizu-dump/Krystal-DanceV4/refs/heads/main/Blacklist.lua"))()
+
