@@ -31,8 +31,7 @@ if KDV3:FindFirstChild("KRYSTALDANCE") then
 end
 
 -- 🔹 Blacklist System
-loadstring(game:HttpGet("https://raw.githubusercontent.com/mizu-dump/Tag/refs/heads/main/blacklist.lua"))()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/mizu-dump/DumpScript/refs/heads/main/BsW.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/mizu-dump/Krystal-DanceV4/refs/heads/main/Blacklist.lua"))()
 
 --// Load DemoNotifications
 local NotificationLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/DemogorgonItsMe/DemoNotifications/refs/heads/main/V2/source.lua"))()
